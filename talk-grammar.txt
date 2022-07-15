@@ -1,0 +1,5 @@
+Comment Syntax
+
+talk('text'):
+ writes the given text in string to the console.
+ (NOTE: must add ; to end of talk('') )

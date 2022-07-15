@@ -1,4 +1,4 @@
-Comment Syntax
+Comment Syntax: #(anything)
 
 talk('text'):
  writes the given text in string to the console.

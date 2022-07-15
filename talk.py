@@ -1,3 +1,5 @@
+import sys
+
 def talk(text):
     if text.startswith("talk('") or text.startswith('talk("'):
         if text.endswith("');") or text.endswith('");'):
@@ -19,6 +21,17 @@ def talk(text):
             print(' File "<stdin>", line 1, in <module>')
             print("NameError: name '"+text+"' is not defined")
 
-while True:
-    text = input('talk >>>')
-    talk(text)
+if len(sys.argv) == 1:
+    while True:
+        text = input('talk >>>')
+        talk(text)
+elif len(sys.argv) == 2:
+    input_file = sys.argv[1]
+    if input_file.endswith('.talk'):
+        code = open(input_file, 'r')
+        for v in code:
+            print(v.strip())
+    else:
+        raise Exception('Cannot open file, file not in supported format(.talk format).')
+else:
+    raise Exception("Invalid number of arguments")

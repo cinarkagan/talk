@@ -30,7 +30,7 @@ elif len(sys.argv) == 2:
     if input_file.endswith('.talk'):
         code = open(input_file, 'r')
         for v in code:
-            print(v.strip())
+            talk(v.strip())
     else:
         raise Exception('Cannot open file, file not in supported format(.talk format).')
 else:

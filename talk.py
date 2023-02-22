@@ -11,7 +11,7 @@ def talk(text):
         else:
             print('  File "<stdin>", line 1')
             print('    '+text)
-            print('    '+text.replace(text,' ')+'^')
+            print('    '+text*' '+'^')
             print('SyntaxError: EOL while scanning string literal')
     else:
         if text.startswith('#'):
